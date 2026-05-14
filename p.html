@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Maintenance Awareness</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color:white;
+        }
+
+        header{
+            background: rgba(0,0,0,0.7);
+            padding:20px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            backdrop-filter: blur(10px);
+        }
+
+        header h1{
+            font-size:28px;
+            color:#00e5ff;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 12px;
+            font-size:16px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#00e5ff;
+        }
+
+        .hero{
+            height:100vh;
+            background:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            position:relative;
+        }
+
+        .hero::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.65);
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:2;
+            max-width:850px;
+            animation:fadeIn 2s ease-in-out;
+        }
+
+        .hero h2{
+            font-size:55px;
+            color:#00e5ff;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:22px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            padding:15px 35px;
+            background:#00e5ff;
+            color:black;
+            font-size:18px;
+            font-weight:bold;
+            border:none;
+            border-radius:30px;
+            cursor:pointer;
+            transition:0.3s;
+            box-shadow:0 0 20px #00e5ff;
+        }
+
+        .btn:hover{
+            transform:scale(1.1);
+            background:white;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            padding:60px 0;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:40px;
+            color:#00e5ff;
+            margin-bottom:40px;
+            text-transform:uppercase;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.1);
+            padding:25px;
+            border-radius:20px;
+            backdrop-filter:blur(10px);
+            box-shadow:0 8px 20px rgba(0,0,0,0.4);
+            transition:0.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 0 20px #00e5ff;
+        }
+
+        .card h3{
+            color:#00e5ff;
+            margin-bottom:15px;
+        }
+
+        .card p, .card ul{
+            font-size:16px;
+            line-height:1.8;
+        }
+
+        .card ul{
+            padding-left:20px;
+        }
+
+        .stats{
+            display:flex;
+            justify-content:space-around;
+            flex-wrap:wrap;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        .stat-box{
+            padding:30px;
+            margin:15px;
+            background:rgba(255,255,255,0.1);
+            border-radius:20px;
+            width:220px;
+            box-shadow:0 0 15px rgba(0,229,255,0.4);
+        }
+
+        .stat-box h2{
+            font-size:45px;
+            color:#00e5ff;
+        }
+
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+            box-shadow:0 0 20px #00e5ff;
+        }
+
+        footer{
+            background:black;
+            text-align:center;
+            padding:25px;
+            margin-top:40px;
+        }
+
+        footer p{
+            color:#00e5ff;
+            font-size:16px;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Industrial Maintenance</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#types">Types</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#safety">Safety</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#future">Future</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Industrial Maintenance Awareness</h2>
+        <p>Reduce Machine Breakdowns | Improve Safety | Increase Productivity</p>
+        <button class="btn" onclick="showMessage()">Explore More</button>
+    </div>
+</section>
+
+<section class="container" id="about">
+    <h2 class="section-title">About Maintenance</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>What is Industrial Maintenance?</h3>
+            <p>Industrial maintenance is the process of inspecting, servicing, repairing, and protecting machines to ensure smooth industrial operations and long equipment life.</p>
+        </div>
+
+        <div class="card">
+            <h3>Common Problems</h3>
+            <ul>
+                <li>Machine breakdowns</li>
+                <li>Overheating</li>
+                <li>Lubrication failure</li>
+                <li>Electrical faults</li>
+                <li>Component wear</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Importance of Maintenance</h3>
+            <p>Proper maintenance improves efficiency, reduces downtime, increases productivity, lowers repair costs, and ensures worker safety.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="types">
+    <h2 class="section-title">Types of Maintenance</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Preventive Maintenance</h3>
+            <p>Regular planned maintenance before failure occurs.</p>
+        </div>
+
+        <div class="card">
+            <h3>Corrective Maintenance</h3>
+            <p>Repairing machinery after breakdown.</p>
+        </div>
+
+        <div class="card">
+            <h3>Predictive Maintenance</h3>
+            <p>Using sensors and AI tools to detect faults early.</p>
+        </div>
+
+        <div class="card">
+            <h3>Shutdown Maintenance</h3>
+            <p>Complete inspection and servicing during plant shutdown.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="benefits">
+    <h2 class="section-title">Benefits</h2>
+
+    <div class="stats">
+        <div class="stat-box">
+            <h2>40%</h2>
+            <p>Less Breakdowns</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>30%</h2>
+            <p>Lower Costs</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>50%</h2>
+            <p>Better Safety</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>60%</h2>
+            <p>Higher Efficiency</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="safety">
+    <h2 class="section-title">Safety Tips</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Worker Safety</h3>
+            <ul>
+                <li>Wear PPE kits</li>
+                <li>Switch off power before repair</li>
+                <li>Use proper tools</li>
+                <li>Follow safety signs</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Daily inspection</li>
+                <li>Regular lubrication</li>
+                <li>Timely replacement</li>
+                <li>Record keeping</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Modern Technology</h3>
+            <p>IoT sensors, automation, and AI systems help industries monitor machine health in real time.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="schedule">
+    <h2 class="section-title">Maintenance Schedule</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Daily Tasks</h3>
+            <p>Cleaning, sound checks, temperature checks, and visual inspection.</p>
+        </div>
+
+        <div class="card">
+            <h3>Weekly Tasks</h3>
+            <p>Lubrication, belt inspection, electrical checks, and tightening bolts.</p>
+        </div>
+
+        <div class="card">
+            <h3>Monthly Tasks</h3>
+            <p>Deep inspection, part replacement, software updates, and safety testing.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="future">
+    <h2 class="section-title">Future of Maintenance</h2>
+
+    <div class="card">
+        <h3>Smart Industries</h3>
+        <p>Future industries use robotics, cloud systems, AI, and predictive maintenance to improve production, reduce costs, and prevent machine failures before they happen.</p>
+    </div>
+</section>
+
+<section class="container" id="gallery">
+    <h2 class="section-title">Industrial Gallery</h2>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="Inspection">
+        <img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=800&q=80" alt="Machines">
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Safety">
+        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Factory">
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Industrial Maintenance Awareness Website | ITE CIA Activity</p>
+
+    <p style="margin-top:10px; font-size:18px; color:white;">
+        Department Of Mechanical Engineering
+    </p>
+
+    <p style="margin-top:5px; font-size:18px; color:white;">
+        CIA Activity Of ITE Guided by Ms. S. M. Gujrathi
+    </p>
+</footer>
+
+<script>
+    function showMessage(){
+        alert("Preventive Maintenance saves time, money, and lives!");
+    }
+</script>
+
+</body>
+</html>
